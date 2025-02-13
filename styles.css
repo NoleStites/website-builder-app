@@ -1,0 +1,73 @@
+:root {
+    --resizeBarWidth: 30px;
+    --resizeBarHeight: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgrey;
+}
+
+.flex_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#outer_box {
+    width: 100%;
+    height: 100%;
+}
+
+#inner_box {
+    width: 50%;
+    height: 50%;
+    border: 3px solid grey;
+}
+
+#left, #right {
+    width: 100%;
+    height: 100%;
+}
+
+#left {
+    background-color: darkred;
+}
+#right {
+    background-color: darkblue;
+}
+
+/* Resize bar styles */
+.resize_bar {
+    position: absolute;
+    background-color: black;
+    z-index: 3;
+    cursor: pointer;
+}
+#right_bar, #left_bar {
+    width: var(--resizeBarWidth);
+    height: var(--resizeBarHeight);
+}
+#bottom_bar, #top_bar {
+    width: var(--resizeBarHeight);
+    height: var(--resizeBarWidth);
+}
+
+#right_bar {
+    right: calc(-1*var(--resizeBarWidth)/2);
+}
+#bottom_bar {
+    bottom: calc(-1*var(--resizeBarWidth)/2);
+}
+#left_bar {
+    left: calc(-1*var(--resizeBarWidth)/2);
+}
+#top_bar {
+    top: calc(-1*var(--resizeBarWidth)/2);
+}
